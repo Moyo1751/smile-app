@@ -1,0 +1,13 @@
+{
+  "name": "LearnNode",
+  "version": "1.0.0",
+  "description": "My first NodeJS Project",
+  "main": "index.js",
+  "author": "LAPTOP-INCD9FJQ\\Moyo <moyoboy15@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "popups": "^1.1.3",
+    "pug": "^3.0.2"
+  }
+}

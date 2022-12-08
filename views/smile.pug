@@ -1,0 +1,55 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title=title
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js")
+        script(src="js/app.js", type="text/javascript") 
+        link(rel="stylesheet", href="css/style.css")
+        link(rel="stylesheet", href="css/style2.css")
+    body 
+    header 
+        div(class="nav-wrapper") 
+            div(class="left-side") 
+                div(class="logo") 
+                    div Smile Game
+
+            div(class="right-side") 
+                div(class="nav-link-wrapper active-nav-link")
+                    <a href="smile.pug">Play</a>
+    <section>
+        <button id="next-btn">Next Question</button>
+        h2(id="score") SCORE=
+    </section>
+    <section class="question-box">
+        <h3>Question</h3>
+        <img id="question-img" src=""/>
+    </section>
+    <section class="btns">
+        <h4>
+            p Select Answer: 
+        </h4>
+        <div class="answer-btns">
+            <button value="0">0</button>
+            <button value="1">1</button>
+            <button value="2">2</button>
+            <button value="3">3</button>
+            <button value="4">4</button>
+            <button value="5">5</button>
+            <button value="6">6</button>
+            <button value="7">7</button>
+            <button value="8">8</button>
+            <button value="9">9</button>
+        </div>
+    </section>
+    footer 
+        div(class="footer-logo") 
+            div(class="logo") 
+            div Smile Game
+
+        div(class="footer-links") 
+            div(class="footer-link-wrapper")
+            <a href="smile.pug">Play</a>  
+        
