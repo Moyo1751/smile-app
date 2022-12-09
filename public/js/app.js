@@ -1,7 +1,8 @@
-
+//variable declarations 
 let apiRes = { question: '', solution: '' };
 const apiUrl = 'https://marcconrad.com/uob/smile/api.php?out=json';
 let score = 0;
+// used document.ready to the javascript runs only after the page is fully loaded  
 $(document).ready(function() {
     $('#next-btn').click(function (e) {
         getQuestionFromApi();
