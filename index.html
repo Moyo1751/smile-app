@@ -1,70 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <h2>Smile App</h2>
     <section><button id="next-btn">Next Question</button></section>
     <section class="question-box">
-        <h3>Question</h3>
-        <img id="question-img" src=""/>
+      <h3>Question</h3>
+      <img id="question-img" src="" />
     </section>
     <section class="btns">
-        <h4>
-            Select Answer:
-        </h4>
-        <div class="answer-btns">
-            <button value="0">0</button>
-            <button value="1">1</button>
-            <button value="2">2</button>
-            <button value="3">3</button>
-            <button value="4">4</button>
-            <button value="5">5</button>
-            <button value="6">6</button>
-            <button value="7">7</button>
-            <button value="8">8</button>
-            <button value="9">9</button>
-        </div>
+      <h4>Select Answer:</h4>
+      <div class="answer-btns">
+        <button value="0">0</button>
+        <button value="1">1</button>
+        <button value="2">2</button>
+        <button value="3">3</button>
+        <button value="4">4</button>
+        <button value="5">5</button>
+        <button value="6">6</button>
+        <button value="7">7</button>
+        <button value="8">8</button>
+        <button value="9">9</button>
+      </div>
     </section>
     <script src="jquery-3.6.1.js"></script>
     <script>
-        let apiRes = {question: '', solution: ''};
-        const apiUrl =  'https://marcconrad.com/uob/smile/api.php?out=json';
-        console.log('it is working');
-        $('#next-btn').click(function(e){
-            getQuestionFromApi();
-        })
-        $('.answer-btns').click(function (e) {
-            //alert('answer button clicked!');
-            console.log(e.target.value);
-            const selectedAnswer = parseInt(e.target.value);
-            checkAnswer(selectedAnswer)
-        })
-        function getQuestionFromApi() {
-            $.getJSON({
-                url:apiUrl,
-                success: function(result) {
-                    apiRes = result;
-                    console.log(apiRes);
-                    $('#question-img').attr('src', apiRes.question);
-                },
-                
-            })
-        }
-        function checkAnswer(answer) {
-            if (answer === apiRes.solution) {
-                alert ('You got the answer right!');
-                alert('Click the "Next Question" button to continue')
-                return;
-            }
-            alert ('Wrong answer mate, try again!');
-        }
+      let apiRes = { question: "", solution: "" };
+      // const apiUrl = "https://marcconrad.com/uob/smile/api.php?out=json";
+      const apiUrl = "http://marcconrad.com/uob/tomato/api.php?out=json";
+      console.log("it is working");
+      $("#next-btn").click(function (e) {
         getQuestionFromApi();
+      });
+      $(".answer-btns").click(function (e) {
+        //alert('answer button clicked!');
+        console.log(e.target.value);
+        const selectedAnswer = parseInt(e.target.value);
+        checkAnswer(selectedAnswer);
+      });
+      function getQuestionFromApi() {
+        $.getJSON({
+          url: apiUrl,
+          success: function (result) {
+            apiRes = result;
+            console.log(apiRes);
+            $("#question-img").attr("src", apiRes.question);
+          },
+        });
+      }
+      function checkAnswer(answer) {
+        if (answer === apiRes.solution) {
+          alert("You got the answer right!");
+          alert('Click the "Next Question" button to continue');
+          return;
+        }
+        alert("Wrong answer mate, try again!");
+      }
+      getQuestionFromApi();
     </script>
-</body>
+  </body>
 </html>
